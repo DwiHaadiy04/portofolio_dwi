@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Dwi Haadiy Palguna</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            background: #f5f5f5;
+            padding: 30px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 0;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            border-radius: 12px;
+            overflow: hidden;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 45px 50px 35px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 50%;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: white;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+            z-index: 1;
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .header-left h1 {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .header-left .subtitle {
+            font-size: 14px;
+            letter-spacing: 3px;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 11px;
+            line-height: 2;
+            font-weight: 300;
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        .header-right div {
+            margin-bottom: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .header-right div:hover {
+            transform: translateX(-5px);
+            opacity: 0.8;
+        }
+
+        .main-content {
+            padding: 20px 50px 40px;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 40px;
+        }
+
+        .left-column {
+            padding-right: 20px;
+            animation: slideInLeft 1s ease-out 0.2s both;
+        }
+
+        .right-column {
+            animation: slideInRight 1s ease-out 0.2s both;
+        }
+
+        .section {
+            margin-bottom: 35px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .section-title {
+            font-size: 17px;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #1a1a1a;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: #4a4a4a;
+            transition: width 0.5s ease;
+        }
+
+        .section:hover .section-title::after {
+            width: 60px;
+        }
+
+        .about-text {
+            font-size: 11px;
+            color: #4a4a4a;
+            line-height: 1.8;
+            text-align: justify;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .about-text:hover {
+            color: #2a2a2a;
+        }
+
+        .education-item {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border-left: 3px solid #e0e0e0;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .education-item::before {
+            content: '';
+            position: absolute;
+            left: -3px;
+            top: 0;
+            width: 3px;
+            height: 0;
+            background: #1a1a1a;
+            transition: height 0.4s ease;
+        }
+
+        .education-item:hover::before {
+            height: 100%;
+        }
+
+        .education-item:hover {
+            transform: translateX(8px);
+            border-left-color: #1a1a1a;
+        }
+
+        .edu-school {
+            font-size: 12px;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .education-item:hover .edu-school {
+            color: #000;
+        }
+
+        .edu-details {
+            font-size: 11px;
+            color: #5a5a5a;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            font-size: 11px;
+            color: #4a4a4a;
+            margin-bottom: 10px;
+            line-height: 1.5;
+            font-weight: 400;
+            padding-left: 22px;
+            position: relative;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .skills-list li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #1a1a1a;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .skills-list li:hover {
+            color: #1a1a1a;
+            transform: translateX(8px);
+            font-weight: 500;
+        }
+
+        .skills-list li:hover:before {
+            left: 3px;
+            animation: pulse 0.6s ease-in-out infinite;
+        }
+
+        .language-list {
+            list-style: none;
+        }
+
+        .language-list li {
+            font-size: 11px;
+            color: #4a4a4a;
+            margin-bottom: 8px;
+            padding-left: 22px;
+            position: relative;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .language-list li:before {
+            content: "●";
+            position: absolute;
+            left: 0;
+            color: #1a1a1a;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .language-list li:hover {
+            color: #1a1a1a;
+            transform: translateX(5px);
+        }
+
+        .language-list li:hover:before {
+            transform: scale(1.3);
+        }
+
+        .experience-item {
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 30px;
+            transition: all 0.4s ease;
+            cursor: default;
+        }
+
+        .experience-item:hover {
+            transform: translateX(8px);
+        }
+
+        .experience-item:before {
+            content: "";
+            position: absolute;
+            left: 6px;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            border: 3px solid #1a1a1a;
+            border-radius: 50%;
+            background: white;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover:before {
+            box-shadow: 0 0 0 6px rgba(26, 26, 26, 0.15);
+            transform: scale(1.2);
+        }
+
+        .experience-item:after {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 25px;
+            width: 2px;
+            height: calc(100% + 5px);
+            background: linear-gradient(180deg, #1a1a1a 0%, #d0d0d0 100%);
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover:after {
+            width: 3px;
+            left: 9.5px;
+        }
+
+        .experience-item:last-child:after {
+            display: none;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 6px;
+            gap: 10px;
+        }
+
+        .exp-title {
+            font-size: 12px;
+            font-weight: 800;
+            color: #1a1a1a;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover .exp-title {
+            color: #000;
+        }
+
+        .exp-period {
+            font-size: 10px;
+            color: white;
+            background: linear-gradient(135deg, #1a1a1a 0%, #3a3a3a 100%);
+            padding: 4px 12px;
+            border-radius: 12px;
+            white-space: nowrap;
+            font-weight: 600;
+            box-shadow: 0 3px 10px rgba(26, 26, 26, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover .exp-period {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(26, 26, 26, 0.3);
+        }
+
+        .exp-company {
+            font-size: 11px;
+            color: #4a4a4a;
+            margin-bottom: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover .exp-company {
+            color: #2a2a2a;
+        }
+
+        .exp-description {
+            font-size: 10px;
+            color: #4a4a4a;
+            line-height: 1.7;
+            text-align: justify;
+            font-weight: 400;
+        }
+
+        .project-item {
+            margin-bottom: 18px;
+            position: relative;
+            padding-left: 30px;
+            transition: all 0.4s ease;
+            cursor: default;
+        }
+
+        .project-item:hover {
+            transform: translateX(8px);
+        }
+
+        .project-item:before {
+            content: "";
+            position: absolute;
+            left: 6px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border: 3px solid #1a1a1a;
+            border-radius: 50%;
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        .project-item:hover:before {
+            box-shadow: 0 0 0 6px rgba(26, 26, 26, 0.15);
+            transform: scale(1.2);
+            background: #1a1a1a;
+        }
+
+        .project-title {
+            font-size: 11px;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .project-item:hover .project-title {
+            color: #000;
+        }
+
+        .project-desc {
+            font-size: 10px;
+            color: #5a5a5a;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+                animation: none;
+            }
+            .header::before {
+                display: none;
+            }
+            .experience-item:hover,
+            .project-item:hover,
+            .skills-list li:hover,
+            .education-item:hover,
+            .header-right div:hover {
+                transform: none;
+            }
+            .section-title::after {
+                width: 40px;
+            }
+            * {
+                animation: none !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            .main-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .header-right {
+                text-align: left;
+            }
+            .container {
+                border-radius: 8px;
+            }
+            .header {
+                padding: 30px 30px 20px;
+            }
+            .main-content {
+                padding: 20px 30px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <div class="header-left">
+                    <h1>DWI HAADIY PALGUNA</h1>
+                    <div class="subtitle">INFORMATION SYSTEM STUDENT</div>
+                </div>
+                <div class="header-right">
+                    <div>📞 +62895411953876</div>
+                    <div>✉️ dwihadyp@gmail.com</div>
+                    <div>📍 Kota Depok</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="main-grid">
+                <div class="left-column">
+                    <div class="section">
+                        <h2 class="section-title">About Me</h2>
+                        <p class="about-text">
+                            Saya adalah mahasiswa aktif program studi D3 Sistem Informasi semester 5 yang memiliki semangat tinggi untuk terus belajar dan berkembang didunia teknologi. Selama perkuliahan, saya telah mempelajari berbagai aspek penting dalam bidang sistem informasi, termasuk pengembangan frontend, back-end, dan juga perancangan antarmuka (UI/UX). Saya memiliki kemampuan dalam berbabgai bahasa pemograman seperti PHP, Java, Javascript, HTML, CSS, React, dan SQL (MySQL), yang mendukung saya dalam membangun berbagai aplikasi berbasis web maupun sistem informasi sederhana.
+                        </p>
+                    </div>
+
+                    <div class="section">
+                        <h2 class="section-title">Education</h2>
+                        <div class="education-item">
+                            <div class="edu-school">UPN Veteran Jakarta</div>
+                            <div class="edu-details">D3 • Sistem Informasi<br>IPK 3.83<br>2023 - Present</div>
+                        </div>
+                        <div class="education-item">
+                            <div class="edu-school">SMAS PGRI 4 Jakarta</div>
+                            <div class="edu-details">SMA/SMK<br>Ilmu Pengetahuan Alam (IPA)<br>Nilai rata-rata: 88.63<br>2020 - 2023</div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h2 class="section-title">Skills</h2>
+                        <ul class="skills-list">
+                            <li>Web Development</li>
+                            <li>Frontend Development</li>
+                            <li>Backend Development</li>
+                            <li>Database Management</li>
+                            <li>UI/UX Design</li>
+                            <li>Data Analytics</li>
+                            <li>Problem-Solving</li>
+                            <li>Teamwork & Leadership</li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <h2 class="section-title">Language</h2>
+                        <ul class="language-list">
+                            <li>Bahasa Indonesia</li>
+                            <li>English</li>
+                            <li>Korean (Pemula)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="right-column">
+                    <div class="section">
+                        <h2 class="section-title">Lisensi dan Sertifikasi</h2>
+                        
+                        <div class="experience-item">
+                            <div class="exp-header">
+                                <div class="exp-title">Code Generation & Optimization using IBM Granite</div>
+                                <div class="exp-period">Agustus 2024</div>
+                            </div>
+                            <div class="exp-company">IBM SkillsBuild</div>
+                            <div class="exp-description">
+                                Memperoleh keterampilan teknis dalam membangun, mengoptimalkan, dan mengelola kode menggunakan teknologi IBM Granite, mencakup praktik terbaik efisiensi kode serta pemanfaatan alat bantu AI untuk optimisasi performa.
+                            </div>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="exp-header">
+                                <div class="exp-title">Data Analytics (Information Technology Specialist)</div>
+                                <div class="exp-period">Desember 2024</div>
+                            </div>
+                            <div class="exp-company">Certiport | CerNexus | Person VUE</div>
+                            <div class="exp-description">
+                                Sertifikasi resmi IT Specialist yang mengukur kemampuan dalam analisis data, meliputi pemahaman dasar data, teknik pengolahan, visualisasi, serta penerapan tools analitik untuk mendukung pengambilan keputusan.
+                            </div>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="exp-header">
+                                <div class="exp-title">Peserta Pemakalah SENAMIKA</div>
+                                <div class="exp-period">Desember 2024</div>
+                            </div>
+                            <div class="exp-company">Fakultas Ilmu Komputer, UPN Veteran Jakarta</div>
+                            <div class="exp-description">
+                                Berpartisipasi sebagai pemakalah dalam Seminar Nasional Mahasiswa Bidang Ilmu Komputer dan Aplikasinya (SENAMIKA) dengan tema "Peran Data Governance dalam Mendorong Inovasi dan Pertumbuhan Enterprise di Era Big Data".
+                            </div>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="exp-header">
+                                <div class="exp-title">Java Fundamentals - Award of Final Exam Completion</div>
+                                <div class="exp-period">Juni 2024</div>
+                            </div>
+                            <div class="exp-company">Oracle Academy</div>
+                            <div class="exp-description">
+                                Penghargaan atas penyelesaian ujian akhir dalam kursus Java Fundamentals yang diselenggarakan oleh Oracle Academy. Sertifikasi ini memvalidasi pemahaman mendalam mengenai konsep dasar pemrograman Java, struktur data, dan logika pemrograman berorientasi objek (OOP) dengan standar industri global.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h2 class="section-title">Project</h2>
+                        
+                        <div class="project-item">
+                            <div class="project-title">Nexa Notes</div>
+                            <div class="project-desc">Tempat terbaik menyimpan apa yang layak diingat. Karena setiap catatan adalah langkah awal menuju ide besar berikutnya.</div>
+                        </div>
+                        
+                        <div class="project-item">
+                            <div class="project-title">Ruang Tanam</div>
+                            <div class="project-desc">Platform edukasi untuk memilih tanaman yang sesuai dengan kondisi lingkungan perkotaan dan lahan terbatas.</div>
+                        </div>
+                        
+                        <div class="project-item">
+                            <div class="project-title">Korean-Dictionary</div>
+                            <div class="project-desc">Korean Dictionary adalah kamus online sederhana untuk mencari kosakata bahasa Korea beserta arti Bahasa Indonesia dan romanisasinya.</div>
+                        </div>
+                        
+                        <div class="project-item">
+                            <div class="project-title">Dapur Uduk Josh</div>
+                            <div class="project-desc">Dapur Uduk Josh menyajikan nasi uduk gurih khas rumahan dengan lauk lezat dan harga terjangkau.</div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h2 class="section-title">Technical Skills</h2>
+                        
+                        <div class="project-item">
+                            <div class="project-title">Programming Languages</div>
+                            <div class="project-desc">PHP, Java, JavaScript, C++, HTML/CSS, SQL (MySQL), TypeScript</div>
+                        </div>
+                        
+                        <div class="project-item">
+                            <div class="project-title">Frameworks & Libraries</div>
+                            <div class="project-desc">React, Next.js, Bootstrap, Node.js, TailwindCSS</div>
+                        </div>
+                        
+                        <div class="project-item">
+                            <div class="project-title">Tools & Technologies</div>
+                            <div class="project-desc">Figma, Visual Studio Code, Github, MySQL, Database Management (SQL & NoSQL)</div>
+                        </div>
+                        
+                        <div class="project-item">
+                            <div class="project-title">Soft Skills</div>
+                            <div class="project-desc">Adaptif, Mendengarkan aktif, Empati, Kesabaran, Manajemen stres, Manajemen waktu, Komunikasi yang baik</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
