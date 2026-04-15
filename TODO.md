@@ -1,8 +1,8 @@
-# Visitor Counter Implementation Plan
+# Fix Vercel Deployment (Base Path Issue)
 
-## Steps:
-- [x] 1. Create `src/hooks/useVisitorCounter.js` hook (visitor logic + API)
-- [x] 2. Edit `src/App.jsx` to integrate counter in About stats section
-- [x] 3. Test locally with `npm run dev` (incognito mode for new visitor) - Server running at http://localhost:5173/portofolio/
-- [ ] 4. Deploy changes: `npm run deploy`
-- [ ] 5. Verify live counter on deployed site
+## Plan Breakdown:
+- [x] 1. Edit vite.config.js → set base: '/portofolio/'
+- [x] 2. Run `npm run build` → regenerate dist/ with correct paths
+- [x] 3. Test `npm run preview` (http://localhost:4173/portofolio/ ✅ running)
+- [ ] 4. `git add/commit/push` → Vercel redeploy
+- [ ] 5. Verify site live
